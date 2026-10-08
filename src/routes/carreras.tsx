@@ -29,7 +29,7 @@ function Page() {
       .map((label) => `${label}: ${data.get(label)}`)
       .concat(["", "Adjunto: hoja de vida en PDF."])
       .join("\n");
-    window.location.href = `mailto:info@excelenciaeducativa.co?subject=${encodeURIComponent("Postulación laboral")}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:administracion@excelenciaeducativa.co?subject=${encodeURIComponent("Postulación laboral")}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -69,7 +69,7 @@ function Page() {
           Postularme
         </button>
         <p className="text-xs text-muted-foreground">
-          Se abrirá tu cliente de correo para que adjuntes tu hoja de vida en PDF.
+          Se abrirá tu Provedor de correo para que adjuntes tu hoja de vida en PDF.
         </p>
       </form>
     </PageShell>

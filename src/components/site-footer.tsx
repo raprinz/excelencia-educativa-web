@@ -24,7 +24,7 @@ export function SiteFooter() {
           </p>
 
           <div className="mt-6 text-xs font-mono text-muted-foreground">
-            Barranquilla · Colombia · excelenciaeducativa.edu@gmail.com
+            Barranquilla · Colombia · administracion@excelenciaeducativa.co
           </div>
         </div>
 
@@ -39,16 +39,19 @@ export function SiteFooter() {
                 Catálogo
               </Link>
             </li>
+
             <li>
               <Link to="/plataforma" className="hover:text-brand">
                 Plataforma
               </Link>
             </li>
+
             <li>
               <Link to="/app" className="hover:text-brand">
                 App móvil
               </Link>
             </li>
+
             <li>
               <Link to="/ia" className="hover:text-brand">
                 Tutor IA
@@ -68,16 +71,13 @@ export function SiteFooter() {
                 Nosotros
               </Link>
             </li>
-            <li>
-              <Link to="/blog" className="hover:text-brand">
-                Blog
-              </Link>
-            </li>
+
             <li>
               <Link to="/carreras" className="hover:text-brand">
                 Trabaja con nosotros
               </Link>
             </li>
+
             <li>
               <Link to="/contacto" className="hover:text-brand">
                 Contacto

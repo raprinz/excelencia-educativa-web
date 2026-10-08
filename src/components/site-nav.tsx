@@ -3,12 +3,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 
+const CALENDAR_URL =
+  "https://calendar.app.google/R6k47XomnM8xmcag6";
+
 const links = [
   { to: "/catalogo", label: "Catálogo" },
   { to: "/plataforma", label: "Plataforma" },
   { to: "/app", label: "App" },
   { to: "/nosotros", label: "Nosotros" },
-  { to: "/blog", label: "Blog" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
@@ -18,7 +20,7 @@ export function SiteNav() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container-page h-16 flex items-center justify-between">
-        
+
         {/* LOGO + NOMBRE */}
         <Link to="/" className="flex items-center gap-2 group">
           <img
@@ -48,9 +50,14 @@ export function SiteNav() {
 
         {/* BOTÓN DE ASESORÍA PARA COMPUTADOR */}
         <div className="hidden lg:flex items-center gap-2">
-          <Link to="/asesoria" className="btn-primary">
+          <a
+            href={CALENDAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
             Agendar asesoría
-          </Link>
+          </a>
         </div>
 
         {/* BOTÓN MENÚ PARA CELULAR */}
@@ -59,7 +66,11 @@ export function SiteNav() {
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          {open ? (
+            <X className="size-5" />
+          ) : (
+            <Menu className="size-5" />
+          )}
         </button>
       </div>
 
@@ -67,6 +78,7 @@ export function SiteNav() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
           <div className="container-page py-4 flex flex-col gap-3">
+
             {links.map((l) => (
               <Link
                 key={l.to}
@@ -78,13 +90,16 @@ export function SiteNav() {
               </Link>
             ))}
 
-            <Link
-              to="/asesoria"
+            <a
+              href={CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="btn-primary mt-2"
             >
               Agendar asesoría
-            </Link>
+            </a>
+
           </div>
         </div>
       )}
