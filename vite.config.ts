@@ -11,6 +11,15 @@ export default defineConfig({
     tsconfigPaths: true,
   },
 
+  build: {
+    rolldownOptions: {
+      output: {
+        assetFileNames: "assets/[hash][extname]",
+        chunkFileNames: "assets/[hash].js",
+      },
+    },
+  },
+
   server: {
     host: "0.0.0.0",
 
