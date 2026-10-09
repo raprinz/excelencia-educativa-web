@@ -72,6 +72,32 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Excelencia Educativa",
+  "url": "https://excelenciaeducativa.co/",
+  "logo": "https://excelenciaeducativa.co/assets/DPLwhrCL.png",
+  "sameAs": [
+    "https://www.instagram.com/excelenciaeducativasas/"
+  ],
+  "description": "Soluciones educativas que integran libros, plataforma digital e inteligencia artificial para instituciones educativas en Colombia.",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Barranquilla"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Atlántico, Colombia"
+    },
+    {
+      "@type": "Country",
+      "name": "Colombia"
+    }
+  ]
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -109,9 +135,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es-CO">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body>
         {children}

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contacto")({
       {
         name: "description",
         content:
-          "Escríbenos, llámanos o visita nuestras oficinas en Barranquilla. Cobertura nacional en Colombia.",
+          "Contacta a Excelencia Educativa para conocer nuestro catálogo de libros, soluciones digitales y servicios para instituciones educativas en Colombia.",
       },
       { property: "og:title", content: "Contacto · Excelencia Educativa" },
       {
@@ -23,11 +23,6 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const info = [
-  {
-    i: MapPin,
-    t: "Dirección",
-    d: "CR 9 F 44 05, Barranquilla, Colombia",
-  },
   {
     i: Phone,
     t: "Teléfono",
