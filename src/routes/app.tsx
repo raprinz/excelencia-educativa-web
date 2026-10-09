@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import appVideo from "@/assets/app-demo.mp4";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/app")({
   head: () => ({
@@ -29,7 +30,13 @@ export const Route = createFileRoute("/app")({
         content:
           "Aprende, avanza y conecta tus contenidos educativos desde cualquier lugar.",
       },
+      ...pageSocialMeta(
+        "/app",
+        "App móvil · Excelencia Educativa",
+        "Aprende, avanza y conecta tus contenidos educativos desde cualquier lugar.",
+      ),
     ],
+    links: [canonicalLink("/app")],
   }),
   component: Page,
 });

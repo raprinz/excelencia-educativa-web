@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Mascot } from "page-mascot";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/ia")({
   head: () => ({
@@ -29,7 +30,13 @@ export const Route = createFileRoute("/ia")({
         content:
           "Un compañero inteligente para aprender, preguntar y avanzar.",
       },
+      ...pageSocialMeta(
+        "/ia",
+        "Ronaldo · Tutor IA · Excelencia Educativa",
+        "Un compañero inteligente para aprender, preguntar y avanzar.",
+      ),
     ],
+    links: [canonicalLink("/ia")],
   }),
   component: Page,
 });

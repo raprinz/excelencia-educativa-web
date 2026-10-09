@@ -8,6 +8,7 @@ import {
   Music2,
 } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 import videoPromocional from "@/assets/Video Promocional.mp4";
 
@@ -67,7 +68,13 @@ export const Route = createFileRoute("/nosotros")({
         content:
           "Editorial colombiana con más de 15 años transformando la educación.",
       },
+      ...pageSocialMeta(
+        "/nosotros",
+        "Nosotros · Excelencia Educativa",
+        "Editorial colombiana con más de 15 años transformando la educación.",
+      ),
     ],
+    links: [canonicalLink("/nosotros")],
   }),
   component: Page,
 });

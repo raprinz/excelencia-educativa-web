@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/cotizacion")({
   head: () => ({
@@ -15,7 +16,13 @@ export const Route = createFileRoute("/cotizacion")({
         property: "og:description",
         content: "Cotización para instituciones y colegios en Colombia.",
       },
+      ...pageSocialMeta(
+        "/cotizacion",
+        "Solicitar cotización · Excelencia Educativa",
+        "Cotización para instituciones y colegios en Colombia.",
+      ),
     ],
+    links: [canonicalLink("/cotizacion")],
   }),
   component: Page,
 });

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -15,7 +16,13 @@ export const Route = createFileRoute("/blog")({
         property: "og:description",
         content: "Educación, innovación y tecnología para instituciones.",
       },
+      ...pageSocialMeta(
+        "/blog",
+        "Blog · Excelencia Educativa",
+        "Educación, innovación y tecnología para instituciones.",
+      ),
     ],
+    links: [canonicalLink("/blog")],
   }),
   component: Page,
 });

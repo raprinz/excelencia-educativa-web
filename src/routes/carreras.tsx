@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/carreras")({
   head: () => ({
@@ -15,7 +16,13 @@ export const Route = createFileRoute("/carreras")({
         property: "og:description",
         content: "Buscamos personas apasionadas por la educación y la tecnología.",
       },
+      ...pageSocialMeta(
+        "/carreras",
+        "Trabaja con nosotros · Excelencia Educativa",
+        "Buscamos personas apasionadas por la educación y la tecnología.",
+      ),
     ],
+    links: [canonicalLink("/carreras")],
   }),
   component: Page,
 });

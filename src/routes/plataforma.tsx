@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 import {
   Play,
   Headphones,
@@ -25,7 +26,13 @@ export const Route = createFileRoute("/plataforma")({
         property: "og:description",
         content: "El ecosistema digital que acompaña cada libro impreso.",
       },
+      ...pageSocialMeta(
+        "/plataforma",
+        "Plataforma Educativa · Excelencia Educativa",
+        "El ecosistema digital que acompaña cada libro impreso.",
+      ),
     ],
+    links: [canonicalLink("/plataforma")],
   }),
   component: Page,
 });

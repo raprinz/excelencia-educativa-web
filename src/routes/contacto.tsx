@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
 import { Phone, Mail, Clock } from "lucide-react";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -17,7 +18,13 @@ export const Route = createFileRoute("/contacto")({
         property: "og:description",
         content: "Estamos para acompañarte en cada paso.",
       },
+      ...pageSocialMeta(
+        "/contacto",
+        "Contacto · Excelencia Educativa",
+        "Estamos para acompañarte en cada paso.",
+      ),
     ],
+    links: [canonicalLink("/contacto")],
   }),
   component: Page,
 });

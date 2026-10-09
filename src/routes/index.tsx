@@ -15,6 +15,7 @@ import {
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFab } from "@/components/whatsapp-fab";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 // ============================================================
 // PORTADAS DEL CATÁLOGO
@@ -94,7 +95,13 @@ export const Route = createFileRoute("/")({
         content:
           "Libros, plataforma y tutor IA para instituciones educativas en Colombia.",
       },
+      ...pageSocialMeta(
+        "/",
+        "Excelencia Educativa · Ecosistema EdTech",
+        "Libros, plataforma y tutor IA para instituciones educativas en Colombia.",
+      ),
     ],
+    links: [canonicalLink("/")],
   }),
   component: Home,
 });

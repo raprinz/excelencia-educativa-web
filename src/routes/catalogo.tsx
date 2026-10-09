@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { PageShell } from "@/components/page-shell";
+import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 // ============================================================
 // TIPOS
@@ -54,7 +55,13 @@ export const Route = createFileRoute("/catalogo")({
         content:
           "Explora nuestros libros educativos por área y grado y solicita información sobre los títulos de tu interés.",
       },
+      ...pageSocialMeta(
+        "/catalogo",
+        "Catálogo · Excelencia Educativa",
+        "Explora nuestros libros educativos por área y grado y solicita información sobre los títulos de tu interés.",
+      ),
     ],
+    links: [canonicalLink("/catalogo")],
   }),
   component: Page,
 });
