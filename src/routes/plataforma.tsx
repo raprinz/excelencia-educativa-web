@@ -19,11 +19,7 @@ import {
 // ENLACE A LA PLATAFORMA EDUCATIVA
 // ============================================================
 
-// Cuando el prototipo esté disponible, pega aquí su URL.
-// Ejemplo: "http://localhost:3000" para pruebas locales.
-// Para producción utilizaremos la dirección definitiva.
-
-const PLATFORM_PREVIEW_URL = "http://localhost:3000";
+const PLATFORM_URL = "https://aula.excelenciaeducativa.co/";
 
 export const Route = createFileRoute("/plataforma")({
   head: () => ({
@@ -107,46 +103,46 @@ function Page() {
           ACCESO A LA PLATAFORMA
       ======================================================= */}
 
-      <section className="mb-12 relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand via-brand to-[oklch(0.45_0.2_270)] text-brand-foreground">
+      <section className="mb-12 relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand via-brand to-[oklch(0.45_0.2_270)] text-brand-foreground shadow-xl ring-1 ring-brand/20">
         <div className="absolute -top-20 -right-20 size-64 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute -bottom-24 -left-16 size-64 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 p-8 md:p-10">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 p-8 md:p-12">
           <div className="max-w-2xl text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs font-semibold uppercase tracking-wider">
               <Sparkles className="size-3.5" />
-              Experiencia digital
+              Acceso a la plataforma
             </div>
 
             <h2 className="mt-5 text-2xl md:text-3xl font-extrabold tracking-tight">
-              Tu aprendizaje continúa en la plataforma.
+              Ingresa a tu aula virtual
             </h2>
 
             <p className="mt-4 text-sm md:text-base text-white/85 leading-relaxed max-w-xl">
-              Ingresa al entorno educativo de Excelencia Educativa y descubre
-              una nueva forma de aprender mediante actividades, recursos
-              interactivos y herramientas digitales.
+              Continúa tu experiencia educativa en el aula digital de
+              Excelencia Educativa. El acceso está disponible para estudiantes
+              y docentes.
             </p>
 
             <p className="mt-3 text-xs text-white/70">
-              Acceso para estudiantes y docentes.
+              Inicia sesión en la plataforma educativa.
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-3 shrink-0 w-full lg:w-auto">
             <a
-              href={PLATFORM_PREVIEW_URL}
+              href={PLATFORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3 w-full lg:w-auto px-7 py-4 rounded-xl bg-white text-brand font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-3 w-full lg:w-auto px-8 py-5 rounded-xl bg-white text-brand text-base font-extrabold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
             >
               <Monitor className="size-5" />
-              <span>Vista previa de la plataforma</span>
+              <span>Iniciar sesión</span>
               <ExternalLink className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
             <span className="text-xs text-white/70 text-center">
-              Se abrirá en una nueva pestaña
+              aula.excelenciaeducativa.co · Se abre en una nueva pestaña
             </span>
           </div>
         </div>
@@ -190,7 +186,7 @@ function Page() {
         </p>
 
         <a
-          href={PLATFORM_PREVIEW_URL}
+          href={PLATFORM_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center justify-center gap-2 btn-primary"
