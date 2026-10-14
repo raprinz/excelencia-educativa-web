@@ -1,15 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  BookOpen,
-  Bot,
-  LockKeyhole,
-  GraduationCap,
-  Trophy,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Bot, GraduationCap, Trophy, Sparkles } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
-import appVideo from "@/assets/app-demo.mp4";
 import { canonicalLink, pageSocialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/app")({
@@ -27,8 +18,7 @@ export const Route = createFileRoute("/app")({
       },
       {
         property: "og:description",
-        content:
-          "Aprende, avanza y conecta tus contenidos educativos desde cualquier lugar.",
+        content: "Aprende, avanza y conecta tus contenidos educativos desde cualquier lugar.",
       },
       ...pageSocialMeta(
         "/app",
@@ -45,50 +35,49 @@ const features = [
   {
     icon: GraduationCap,
     number: "01",
-    label: "INICIO",
-    title: "Bienvenida",
+    label: "PROPÓSITO",
+    title: "Aprendizaje significativo",
     description:
-      "Una experiencia personalizada desde el primer acceso, diseñada para que el estudiante se familiarice con su entorno de aprendizaje.",
+      "Creamos contenidos que acompañan a estudiantes y docentes en sus retos de aprendizaje.",
   },
   {
     icon: LockKeyhole,
     number: "02",
-    label: "ACCESO",
-    title: "Inicio de sesión",
+    label: "CONTENIDOS",
+    title: "Recursos educativos",
     description:
-      "Acceso seguro mediante las credenciales entregadas junto con el material educativo.",
+      "Materiales pensados para complementar la experiencia de los libros y el trabajo en el aula.",
   },
   {
     icon: BookOpen,
     number: "03",
-    label: "APRENDIZAJE",
-    title: "Mis cursos",
+    label: "EXPERIENCIA",
+    title: "Libros que conectan",
     description:
-      "Encuentra tus libros, contenidos y actividades organizados en un solo lugar.",
+      "Una propuesta editorial que abre posibilidades para explorar, practicar y compartir.",
   },
   {
     icon: Sparkles,
     number: "04",
-    label: "PROGRESO",
-    title: "Mi progreso",
-    description:
-      "Consulta tus avances, actividades completadas y evolución durante el proceso de aprendizaje.",
+    label: "COMUNIDAD",
+    title: "Acompañamiento cercano",
+    description: "Pensamos cada recurso desde las necesidades de las comunidades educativas.",
   },
   {
     icon: Bot,
     number: "05",
-    label: "INTELIGENCIA",
-    title: "Tutor IA",
+    label: "INNOVACIÓN",
+    title: "Tecnología con propósito",
     description:
-      "Un asistente inteligente que acompaña al estudiante, responde dudas y facilita el aprendizaje paso a paso.",
+      "Exploramos nuevas herramientas digitales para enriquecer la experiencia de aprender.",
   },
   {
     icon: Trophy,
     number: "06",
-    label: "LOGROS",
-    title: "Certificados",
+    label: "EVOLUCIÓN",
+    title: "Una propuesta en renovación",
     description:
-      "Consulta tus logros obtenidos durante la experiencia educativa.",
+      "La experiencia digital está evolucionando; pronto daremos a conocer sus nuevos detalles.",
   },
 ];
 
@@ -96,10 +85,10 @@ function Page() {
   return (
     <PageShell
       eyebrow="Nuestra App"
-      title="Una nueva forma de aprender desde cualquier lugar."
-      description="Una experiencia educativa que conecta los libros con contenidos digitales, seguimiento del progreso e inteligencia artificial."
+      title="La experiencia digital que estamos construyendo."
+      description="Conectamos nuestros contenidos educativos con nuevas formas de acompañar a estudiantes y docentes."
     >
-      {/* INTRODUCCIÓN + VIDEO */}
+      {/* INTRODUCCIÓN + ILUSTRACIÓN */}
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div>
           <span className="eyebrow flex items-center gap-2">
@@ -112,10 +101,9 @@ function Page() {
           </h2>
 
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            La aplicación de Excelencia Educativa amplía la experiencia del
-            libro tradicional y la conecta con herramientas digitales,
-            actividades interactivas y un tutor basado en inteligencia
-            artificial.
+            Estamos renovando la experiencia digital para conectar nuestros contenidos educativos
+            con herramientas útiles para estudiantes y docentes. Muy pronto compartiremos cómo será
+            esta nueva etapa.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -126,28 +114,61 @@ function Page() {
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft text-brand text-sm font-semibold">
               <Bot className="size-4" />
-              Tutor IA
+              Innovación educativa
             </div>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft text-brand text-sm font-semibold">
               <Trophy className="size-4" />
-              Logros
+              Aprendizaje
             </div>
           </div>
         </div>
 
-        {/* VIDEO */}
-        <div className="relative">
-          <div className="absolute -inset-6 bg-brand/5 rounded-[40px] rotate-3" />
-
-          <video
-            src={appVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="relative w-full max-w-[400px] mx-auto rounded-[2rem] shadow-elevated bg-black"
-          />
+        {/* Composición visual sin capturas de la interfaz anterior */}
+        <div className="relative mx-auto w-full max-w-[440px]">
+          <div className="absolute -inset-5 rounded-[40px] bg-brand/5 rotate-3" />
+          <div className="relative rounded-[2rem] border border-border bg-card p-6 shadow-elevated sm:p-8">
+            <div className="flex items-center gap-3">
+              <div className="grid size-12 place-items-center rounded-2xl bg-brand text-brand-foreground">
+                <GraduationCap className="size-6" />
+              </div>
+              <div>
+                <p className="font-bold">Excelencia Educativa</p>
+                <p className="text-xs text-muted-foreground">Aprendizaje conectado</p>
+              </div>
+            </div>
+            <div className="mt-7 rounded-2xl bg-brand-soft p-6">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+                Una nueva etapa
+              </span>
+              <h3 className="mt-2 text-2xl font-extrabold leading-tight">
+                Diseñamos mejores formas de aprender.
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Una propuesta que evoluciona junto a las necesidades de cada comunidad.
+              </p>
+            </div>
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              {[
+                { icon: BookOpen, label: "Contenidos" },
+                { icon: Sparkles, label: "Experiencias" },
+                { icon: Bot, label: "Innovación" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="rounded-2xl border border-border p-3 text-center">
+                  <div className="mx-auto grid size-10 place-items-center rounded-xl bg-brand-soft text-brand">
+                    <Icon className="size-5" />
+                  </div>
+                  <p className="mt-2 text-xs font-semibold">{label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center gap-3 rounded-2xl border border-border p-4">
+              <div className="grid size-9 place-items-center rounded-full bg-brand/10 text-brand">
+                <Trophy className="size-4" />
+              </div>
+              <p className="text-sm font-medium">Más detalles, muy pronto</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -157,12 +178,12 @@ function Page() {
           <span className="eyebrow">Experiencia del estudiante</span>
 
           <h2 className="mt-4 text-4xl font-extrabold tracking-tight">
-            Todo lo que necesitas para aprender.
+            Una propuesta pensada para aprender mejor.
           </h2>
 
           <p className="mt-4 text-lg text-muted-foreground">
-            Desde el primer acceso hasta sus logros, la aplicación acompaña al
-            estudiante en cada etapa de su experiencia educativa.
+            Estamos construyendo una propuesta digital que pone el aprendizaje en el centro y
+            evoluciona con su comunidad.
           </p>
         </div>
 
@@ -177,18 +198,14 @@ function Page() {
                   <feature.icon className="size-5" />
                 </div>
 
-                <span className="font-mono text-xs text-muted-foreground">
-                  {feature.number}
-                </span>
+                <span className="font-mono text-xs text-muted-foreground">{feature.number}</span>
               </div>
 
               <div className="mt-6 text-[10px] font-mono uppercase tracking-widest text-brand font-semibold">
                 {feature.label}
               </div>
 
-              <h3 className="mt-2 text-xl font-bold">
-                {feature.title}
-              </h3>
+              <h3 className="mt-2 text-xl font-bold">{feature.title}</h3>
 
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
@@ -207,29 +224,12 @@ function Page() {
           </span>
 
           <h2 className="mt-6 text-3xl md:text-4xl font-extrabold tracking-tight">
-            Muy pronto en tu tienda de aplicaciones.
+            Estamos preparando la nueva experiencia.
           </h2>
 
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Estamos preparando el lanzamiento de la aplicación para que
-            estudiantes puedan disfrutar de una nueva experiencia de
-            aprendizaje desde sus dispositivos móviles.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-card border border-border text-sm font-semibold">
-              <span className="text-brand">A</span>
-              App Store
-            </div>
-
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-card border border-border text-sm font-semibold">
-              <span className="text-brand">▶</span>
-              Google Play
-            </div>
-          </div>
-
-          <p className="mt-5 text-xs text-muted-foreground">
-            Disponible próximamente para Android e iOS.
+            La propuesta digital está en renovación. Pronto compartiremos más información sobre sus
+            contenidos, disponibilidad y herramientas.
           </p>
         </div>
       </div>
@@ -237,7 +237,7 @@ function Page() {
       {/* CTA */}
       <div className="mt-20 text-center">
         <p className="text-sm text-muted-foreground">
-          ¿Quieres conocer cómo funciona nuestra APP educativa?
+          ¿Quieres conocer nuestros recursos educativos?
         </p>
 
         <a

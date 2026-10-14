@@ -55,20 +55,10 @@ import proyeccion4 from "@/assets/Portadas Libros/Proyeccion Matematica 4.jpg";
 import proyeccion5 from "@/assets/Portadas Libros/Proyeccion Matematica 5.jpg";
 
 // ============================================================
-// VIDEO APP
-// ============================================================
-
-const appVideo = new URL(
-  "../assets/app-demo.mp4",
-  import.meta.url,
-).href;
-
-// ============================================================
 // ENLACE DE AGENDA
 // ============================================================
 
-const CALENDAR_URL =
-  "https://calendar.app.google/R6k47XomnM8xmcag6";
+const CALENDAR_URL = "https://calendar.app.google/R6k47XomnM8xmcag6";
 
 // ============================================================
 // RUTA
@@ -78,8 +68,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Excelencia Educativa · Libros, plataforma digital y tutor IA",
+        title: "Excelencia Educativa · Libros, plataforma digital y tutor IA",
       },
       {
         name: "description",
@@ -92,8 +81,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:description",
-        content:
-          "Libros, plataforma y tutor IA para instituciones educativas en Colombia.",
+        content: "Libros, plataforma y tutor IA para instituciones educativas en Colombia.",
       },
       ...pageSocialMeta(
         "/",
@@ -354,20 +342,15 @@ function Home() {
 
       <section className="relative px-6 pt-20 pb-16 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center animate-fade-up">
-          <span className="eyebrow mb-6">
-            EdTech · Editorial · Innovación
-          </span>
+          <span className="eyebrow mb-6">EdTech · Editorial · Innovación</span>
 
           <h1 className="mt-4 max-w-4xl mx-auto text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] text-balance">
-            Conectamos textos,{" "}
-            <span className="text-brand">Tecnología</span> y
-            Experiencias.
+            Conectamos textos, <span className="text-brand">Tecnología</span> y Experiencias.
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Transformamos el aprendizaje conectando instituciones,
-            docentes y estudiantes de toda Colombia con contenidos,
-            tecnología e inteligencia artificial.
+            Transformamos el aprendizaje conectando instituciones, docentes y estudiantes de toda
+            Colombia con contenidos, tecnología e inteligencia artificial.
           </p>
 
           {/* ==================================================
@@ -412,10 +395,7 @@ function Home() {
         <div className="container-page">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((s) => (
-              <div
-                key={s.label}
-                className="text-center"
-              >
+              <div key={s.label} className="text-center">
                 <div className="font-mono text-2xl md:text-3xl font-semibold text-brand-soft">
                   {s.value}
                 </div>
@@ -436,17 +416,14 @@ function Home() {
       <section className="py-24">
         <div className="container-page">
           <div className="max-w-2xl mb-14">
-            <span className="eyebrow">
-              Por qué elegirnos
-            </span>
+            <span className="eyebrow">Por qué elegirnos</span>
 
             <h2 className="mt-4 text-4xl font-extrabold tracking-tight">
               Un ecosistema completo, no solo libros.
             </h2>
 
             <p className="mt-4 text-muted-foreground text-lg">
-              La intersección entre pedagogía tradicional,
-              tecnología y acompañamiento.
+              La intersección entre pedagogía tradicional, tecnología y acompañamiento.
             </p>
           </div>
 
@@ -460,13 +437,9 @@ function Home() {
                   <s.icon className="size-5" />
                 </div>
 
-                <h3 className="mt-6 text-lg font-bold">
-                  {s.title}
-                </h3>
+                <h3 className="mt-6 text-lg font-bold">{s.title}</h3>
 
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {s.desc}
-                </p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -481,19 +454,14 @@ function Home() {
         <div className="container-page">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-xl">
-              <span className="eyebrow">
-                Catálogo inteligente
-              </span>
+              <span className="eyebrow">Catálogo inteligente</span>
 
               <h2 className="mt-4 text-4xl font-extrabold tracking-tight">
                 Material pedagógico para cada etapa.
               </h2>
             </div>
 
-            <Link
-              to="/catalogo"
-              className="btn-secondary shrink-0 inline-flex items-center"
-            >
+            <Link to="/catalogo" className="btn-secondary shrink-0 inline-flex items-center">
               Ver todo el catálogo
               <ArrowRight className="ml-2 size-4" />
             </Link>
@@ -591,13 +559,9 @@ function Home() {
                         {book.area}
                       </span>
 
-                      <h4 className="mt-1 font-bold text-sm leading-tight">
-                        {book.title}
-                      </h4>
+                      <h4 className="mt-1 font-bold text-sm leading-tight">{book.title}</h4>
 
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        Grado {book.grade}
-                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">Grado {book.grade}</p>
                     </div>
                   </Link>
                 ))}
@@ -630,13 +594,9 @@ function Home() {
                         {book.area}
                       </span>
 
-                      <h4 className="mt-1 font-bold text-sm leading-tight">
-                        {book.title}
-                      </h4>
+                      <h4 className="mt-1 font-bold text-sm leading-tight">{book.title}</h4>
 
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        Grado {book.grade}
-                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">Grado {book.grade}</p>
                     </div>
                   </Link>
                 ))}
@@ -663,58 +623,81 @@ function Home() {
             </h2>
 
             <p className="mt-6 text-lg text-muted-foreground">
-              La aplicación móvil convierte cada libro en un tutor
-              personalizado que motiva, guía y corrige en tiempo real.
+              Un ecosistema que conecta nuestros libros con recursos digitales y nuevas formas de
+              acompañar el aprendizaje.
             </p>
 
             <ul className="mt-8 space-y-4">
               {[
-                "Tutor IA para resolución de dudas 24/7",
-                "Gamificación por logros",
-                "Videos, audios y actividades interactivas",
-                "Certificados y seguimiento del progreso",
+                "Recursos digitales que amplían cada libro",
+                "Experiencias para aprender a tu propio ritmo",
+                "Herramientas educativas en evolución",
+                "Tecnología diseñada alrededor del aprendizaje",
               ].map((t) => (
-                <li
-                  key={t}
-                  className="flex items-start gap-3"
-                >
+                <li key={t} className="flex items-start gap-3">
                   <CheckCircle2 className="size-5 text-[oklch(0.72_0.18_155)] shrink-0 mt-0.5" />
 
-                  <span className="text-sm font-medium">
-                    {t}
-                  </span>
+                  <span className="text-sm font-medium">{t}</span>
                 </li>
               ))}
             </ul>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/app"
-                className="btn-primary"
-              >
+              <Link to="/app" className="btn-primary">
                 Conocer la app
               </Link>
 
-              <Link
-                to="/ia"
-                className="btn-secondary"
-              >
+              <Link to="/ia" className="btn-secondary">
                 Ver Tutor IA
               </Link>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-4 bg-brand/5 rounded-[40px] -rotate-2" />
-
-            <video
-              src={appVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="relative w-full max-w-[400px] mx-auto rounded-[2rem] shadow-elevated"
-            />
+          <div className="relative mx-auto w-full max-w-[430px]">
+            <div className="absolute -inset-4 rounded-[40px] bg-brand/5 -rotate-2" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-6 shadow-elevated sm:p-8">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="grid size-11 place-items-center rounded-2xl bg-brand text-brand-foreground">
+                    <BookOpen className="size-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Aprender, conectar, crecer</p>
+                    <p className="text-xs text-muted-foreground">Excelencia Educativa</p>
+                  </div>
+                </div>
+                <Sparkles className="size-5 text-brand" />
+              </div>
+              <div className="mt-7 rounded-2xl bg-brand-soft p-5">
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+                  Un ecosistema educativo
+                </span>
+                <h3 className="mt-2 text-2xl font-extrabold leading-tight">
+                  Cada aprendizaje abre nuevas posibilidades.
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Libros y recursos que acompañan a estudiantes y docentes.
+                </p>
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {[
+                  { icon: BookOpen, title: "Contenidos", text: "Aprendizaje con propósito" },
+                  { icon: Bot, title: "Innovación", text: "Tecnología educativa" },
+                ].map(({ icon: Icon, title, text }) => (
+                  <div key={title} className="rounded-2xl border border-border p-4">
+                    <Icon className="size-5 text-brand" />
+                    <p className="mt-3 text-sm font-bold">{title}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 flex items-center gap-3 rounded-2xl border border-border p-4">
+                <div className="grid size-9 place-items-center rounded-full bg-brand/10 text-brand">
+                  <Sparkles className="size-4" />
+                </div>
+                <p className="text-sm font-medium">Una experiencia digital en evolución</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -726,9 +709,7 @@ function Home() {
       <section className="py-24 bg-surface/60 border-y border-border">
         <div className="container-page">
           <div className="max-w-2xl mb-14">
-            <span className="eyebrow">
-              Casos de éxito
-            </span>
+            <span className="eyebrow">Casos de éxito</span>
 
             <h2 className="mt-4 text-4xl font-extrabold tracking-tight">
               Voces de la comunidad educativa.
@@ -748,13 +729,8 @@ function Home() {
                 r: "Coordinador Académico",
               },
             ].map((t) => (
-              <figure
-                key={t.a}
-                className="p-8 rounded-2xl bg-card border border-border"
-              >
-                <blockquote className="text-lg leading-relaxed text-foreground">
-                  “{t.q}”
-                </blockquote>
+              <figure key={t.a} className="p-8 rounded-2xl bg-card border border-border">
+                <blockquote className="text-lg leading-relaxed text-foreground">“{t.q}”</blockquote>
 
                 <figcaption className="mt-6 flex items-center gap-3">
                   <div className="size-10 rounded-full bg-brand-soft grid place-items-center text-brand font-bold">
@@ -762,13 +738,9 @@ function Home() {
                   </div>
 
                   <div>
-                    <div className="text-sm font-semibold">
-                      {t.a}
-                    </div>
+                    <div className="text-sm font-semibold">{t.a}</div>
 
-                    <div className="text-xs text-muted-foreground">
-                      {t.r}
-                    </div>
+                    <div className="text-xs text-muted-foreground">{t.r}</div>
                   </div>
                 </figcaption>
               </figure>
@@ -795,8 +767,7 @@ function Home() {
               </h2>
 
               <p className="mt-6 text-lg text-white/80 max-w-xl mx-auto">
-                Agenda una asesoría gratuita. Un asesor se
-                comunicará contigo en menos de 24 horas.
+                Agenda una asesoría gratuita. Un asesor se comunicará contigo en menos de 24 horas.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
