@@ -615,11 +615,11 @@ function Home() {
           <div>
             <span className="eyebrow flex items-center gap-2">
               <Sparkles className="size-3" />
-              Ecosistema móvil + IA
+              Ecosistema educativo
             </span>
 
             <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Tu aula en el bolsillo, potenciada por IA.
+              Aprender conecta libros, recursos y nuevas ideas.
             </h2>
 
             <p className="mt-6 text-lg text-muted-foreground">
@@ -646,10 +646,6 @@ function Home() {
               <Link to="/app" className="btn-primary">
                 Conocer la app
               </Link>
-
-              <Link to="/ia" className="btn-secondary">
-                Ver Tutor IA
-              </Link>
             </div>
           </div>
 
@@ -670,32 +666,23 @@ function Home() {
               </div>
               <div className="mt-7 rounded-2xl bg-brand-soft p-5">
                 <span className="text-xs font-semibold uppercase tracking-wider text-brand">
-                  Un ecosistema educativo
+                  Una experiencia conectada
                 </span>
-                <h3 className="mt-2 text-2xl font-extrabold leading-tight">
-                  Cada aprendizaje abre nuevas posibilidades.
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Libros y recursos que acompañan a estudiantes y docentes.
-                </p>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {[
-                  { icon: BookOpen, title: "Contenidos", text: "Aprendizaje con propósito" },
-                  { icon: Bot, title: "Innovación", text: "Tecnología educativa" },
-                ].map(({ icon: Icon, title, text }) => (
-                  <div key={title} className="rounded-2xl border border-border p-4">
-                    <Icon className="size-5 text-brand" />
-                    <p className="mt-3 text-sm font-bold">{title}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{text}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 flex items-center gap-3 rounded-2xl border border-border p-4">
-                <div className="grid size-9 place-items-center rounded-full bg-brand/10 text-brand">
-                  <Sparkles className="size-4" />
+                <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                  {[
+                    { icon: BookOpen, title: "Libros" },
+                    { icon: Sparkles, title: "Recursos" },
+                    { icon: Bot, title: "Innovación" },
+                  ].map(({ icon: Icon, title }) => (
+                    <div key={title} className="min-w-0 rounded-xl bg-card/80 p-3">
+                      <Icon className="mx-auto size-5 text-brand" />
+                      <p className="mt-2 break-words text-xs font-bold sm:text-sm">{title}</p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-sm font-medium">Una experiencia digital en evolución</p>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Recursos pensados para acompañar a estudiantes y docentes.
+                </p>
               </div>
             </div>
           </div>
