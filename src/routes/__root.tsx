@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportError } from "../lib/error-reporting";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 
 function NotFoundComponent() {
   return (
@@ -75,27 +76,26 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Excelencia Educativa",
-  "url": "https://excelenciaeducativa.co/",
-  "logo": "https://excelenciaeducativa.co/assets/DPLwhrCL.png",
-  "sameAs": [
-    "https://www.instagram.com/excelenciaeducativasas/"
-  ],
-  "description": "Soluciones educativas que integran libros, plataforma digital e inteligencia artificial para instituciones educativas en Colombia.",
-  "areaServed": [
+  name: "Excelencia Educativa",
+  url: "https://excelenciaeducativa.co/",
+  logo: "https://excelenciaeducativa.co/assets/DPLwhrCL.png",
+  sameAs: ["https://www.instagram.com/excelenciaeducativasas/"],
+  description:
+    "Soluciones educativas que integran libros, plataforma digital e inteligencia artificial para instituciones educativas en Colombia.",
+  areaServed: [
     {
       "@type": "City",
-      "name": "Barranquilla"
+      name: "Barranquilla",
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Atlántico, Colombia"
+      name: "Atlántico, Colombia",
     },
     {
       "@type": "Country",
-      "name": "Colombia"
-    }
-  ]
+      name: "Colombia",
+    },
+  ],
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -168,6 +168,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <CookieConsentBanner />
     </QueryClientProvider>
   );
 }

@@ -1,4 +1,3 @@
-
 import { createFileRoute } from "@tanstack/react-router";
 
 const BASE_URL = "https://excelenciaeducativa.co";
@@ -15,6 +14,9 @@ const pages = [
   { path: "/app", priority: "0.6" },
   { path: "/carreras", priority: "0.6" },
   { path: "/cotizacion", priority: "0.5" },
+  { path: "/privacidad", priority: "0.3" },
+  { path: "/terminos", priority: "0.3" },
+  { path: "/cookies", priority: "0.3" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
@@ -47,4 +49,3 @@ ${urls}
     },
   },
 });
-

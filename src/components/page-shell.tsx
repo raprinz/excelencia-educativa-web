@@ -7,11 +7,13 @@ export function PageShell({
   eyebrow,
   title,
   description,
+  showWhatsAppFab = true,
   children,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
+  showWhatsAppFab?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -32,7 +34,7 @@ export function PageShell({
       </header>
       <main className="container-page py-16">{children}</main>
       <SiteFooter />
-      <WhatsAppFab />
+      {showWhatsAppFab && <WhatsAppFab />}
     </div>
   );
 }

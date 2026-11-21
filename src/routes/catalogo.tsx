@@ -70,27 +70,9 @@ export const Route = createFileRoute("/catalogo")({
 // FILTROS
 // ============================================================
 
-const areas = [
-  "Todos",
-  "Matemáticas",
-  "Lenguaje",
-  "Arte",
-  "Desarrollo cognitivo",
-];
+const areas = ["Todos", "Matemáticas", "Lenguaje", "Arte", "Desarrollo cognitivo"];
 
-const grades = [
-  "Todos",
-  "Transición",
-  "1°",
-  "2°",
-  "3°",
-  "4°",
-  "5°",
-  "6°",
-  "7°",
-  "8°",
-  "9°",
-];
+const grades = ["Todos", "Transición", "1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°", "9°"];
 
 // ============================================================
 // PORTADAS
@@ -483,10 +465,7 @@ function Page() {
   // CANTIDAD TOTAL
   // ==========================================================
 
-  const cartCount = useMemo(
-    () => cart.reduce((total, item) => total + item.quantity, 0),
-    [cart],
-  );
+  const cartCount = useMemo(() => cart.reduce((total, item) => total + item.quantity, 0), [cart]);
 
   // ==========================================================
   // AGREGAR A COTIZACIÓN
@@ -590,18 +569,14 @@ function Page() {
   const whatsappMessage = [
     "Hola, vengo de la página web de Excelencia Educativa y me gustaría conocer más detalles de los siguientes libros:",
     "",
-    ...cart.map(
-      (item) => `• ${item.title} — Grado: ${item.grade}`,
-    ),
+    ...cart.map((item) => `• ${item.title} — Grado: ${item.grade}`),
     "",
     "Quedo atento(a) a la información y cotización. ¡Gracias!",
   ].join("\n");
 
   const whatsappUrl =
     cart.length > 0
-      ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-          whatsappMessage,
-        )}`
+      ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`
       : "#";
 
   // ==========================================================
@@ -614,6 +589,7 @@ function Page() {
         eyebrow="Catálogo"
         title="Encuentra el libro ideal para cada etapa de aprendizaje."
         description="Explora nuestros libros por área y grado. Selecciona los títulos que te interesen y prepara tu solicitud de cotización."
+        showWhatsAppFab={false}
       >
         {/* ====================================================
             CONTENIDO PRINCIPAL
@@ -771,22 +747,14 @@ function Page() {
                             {book.collection}
                           </span>
 
-                          <span className="text-muted-foreground/50">
-                            •
-                          </span>
+                          <span className="text-muted-foreground/50">•</span>
 
-                          <span className="text-xs text-muted-foreground">
-                            {book.area}
-                          </span>
+                          <span className="text-xs text-muted-foreground">{book.area}</span>
                         </div>
 
-                        <h3 className="mt-2 font-bold text-lg leading-tight">
-                          {book.title}
-                        </h3>
+                        <h3 className="mt-2 font-bold text-lg leading-tight">{book.title}</h3>
 
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          Grado {book.grade}
-                        </p>
+                        <p className="mt-1 text-sm text-muted-foreground">Grado {book.grade}</p>
 
                         {/* BOTÓN */}
 
@@ -826,13 +794,10 @@ function Page() {
                   <BookOpen className="size-7" />
                 </div>
 
-                <h3 className="mt-5 text-xl font-bold">
-                  No encontramos libros
-                </h3>
+                <h3 className="mt-5 text-xl font-bold">No encontramos libros</h3>
 
                 <p className="mt-2 max-w-md mx-auto text-sm text-muted-foreground">
-                  Prueba con otro término de búsqueda o modifica los filtros
-                  de área y grado.
+                  Prueba con otro término de búsqueda o modifica los filtros de área y grado.
                 </p>
 
                 <button
@@ -866,9 +831,7 @@ function Page() {
       >
         <ShoppingCart className="size-5" />
 
-        <span className="hidden sm:inline text-sm font-semibold">
-          Mi cotización
-        </span>
+        <span className="hidden sm:inline text-sm font-semibold">Mi cotización</span>
 
         <span className="min-w-6 h-6 px-1.5 rounded-full bg-white/20 grid place-items-center text-xs font-bold">
           {cartCount}
@@ -897,17 +860,13 @@ function Page() {
 
             <div className="flex items-center justify-between gap-4 p-5 border-b border-border">
               <div>
-                <h2 className="text-xl font-extrabold">
-                  Mi cotización
-                </h2>
+                <h2 className="text-xl font-extrabold">Mi cotización</h2>
 
                 <p className="mt-1 text-sm text-muted-foreground">
                   {cartCount === 0
                     ? "Aún no has seleccionado libros."
                     : `${cartCount} ${
-                        cartCount === 1
-                          ? "unidad seleccionada"
-                          : "unidades seleccionadas"
+                        cartCount === 1 ? "unidad seleccionada" : "unidades seleccionadas"
                       }`}
                 </p>
               </div>
@@ -932,13 +891,11 @@ function Page() {
                       <ShoppingCart className="size-7" />
                     </div>
 
-                    <h3 className="mt-5 text-lg font-bold">
-                      Tu cotización está vacía
-                    </h3>
+                    <h3 className="mt-5 text-lg font-bold">Tu cotización está vacía</h3>
 
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                      Agrega los libros que te interesen y aquí podrás revisar
-                      tu selección antes de contactarnos.
+                      Agrega los libros que te interesen y aquí podrás revisar tu selección antes de
+                      contactarnos.
                     </p>
 
                     <button
@@ -953,10 +910,7 @@ function Page() {
               ) : (
                 <div className="space-y-4">
                   {cart.map((item) => (
-                    <div
-                      key={item.id}
-                      className="rounded-2xl border border-border bg-card p-3"
-                    >
+                    <div key={item.id} className="rounded-2xl border border-border bg-card p-3">
                       <div className="flex gap-3">
                         {/* MINIATURA */}
 
@@ -973,9 +927,7 @@ function Page() {
                         <div className="min-w-0 flex-1">
                           <div className="flex items-start justify-between gap-2">
                             <div>
-                              <h3 className="font-bold text-sm leading-tight">
-                                {item.title}
-                              </h3>
+                              <h3 className="font-bold text-sm leading-tight">{item.title}</h3>
 
                               <p className="mt-1 text-xs text-muted-foreground">
                                 {item.area} · {item.grade}
@@ -995,16 +947,12 @@ function Page() {
                           {/* CANTIDAD */}
 
                           <div className="mt-3 flex items-center justify-between">
-                            <span className="text-xs text-muted-foreground">
-                              Cantidad
-                            </span>
+                            <span className="text-xs text-muted-foreground">Cantidad</span>
 
                             <div className="flex items-center gap-2">
                               <button
                                 type="button"
-                                onClick={() =>
-                                  decreaseQuantity(item.id)
-                                }
+                                onClick={() => decreaseQuantity(item.id)}
                                 className="size-7 rounded-lg border border-border grid place-items-center hover:bg-surface"
                                 aria-label="Disminuir cantidad"
                               >
@@ -1017,9 +965,7 @@ function Page() {
 
                               <button
                                 type="button"
-                                onClick={() =>
-                                  increaseQuantity(item.id)
-                                }
+                                onClick={() => increaseQuantity(item.id)}
                                 className="size-7 rounded-lg border border-border grid place-items-center hover:bg-surface"
                                 aria-label="Aumentar cantidad"
                               >
@@ -1040,13 +986,9 @@ function Page() {
             {cart.length > 0 && (
               <div className="border-t border-border p-5 space-y-4">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">
-                    Libros seleccionados
-                  </span>
+                  <span className="text-muted-foreground">Libros seleccionados</span>
 
-                  <span className="font-bold">
-                    {cart.length}
-                  </span>
+                  <span className="font-bold">{cart.length}</span>
                 </div>
 
                 <a
@@ -1069,9 +1011,8 @@ function Page() {
                 </button>
 
                 <p className="text-[11px] text-muted-foreground text-center leading-relaxed">
-                  La selección de libros se enviará en el mensaje de WhatsApp
-                  para que nuestro equipo pueda ayudarte con la información y
-                  cotización.
+                  La selección de libros se enviará en el mensaje de WhatsApp para que nuestro
+                  equipo pueda ayudarte con la información y cotización.
                 </p>
               </div>
             )}

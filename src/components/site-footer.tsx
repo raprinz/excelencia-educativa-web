@@ -4,8 +4,8 @@ import logo from "../assets/logo.png";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface/40 mt-24">
-      <div className="container-page py-16 grid md:grid-cols-4 gap-12">
-        <div className="col-span-2">
+      <div className="container-page py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="sm:col-span-2 lg:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <img
               src={logo}
@@ -62,6 +62,29 @@ export function SiteFooter() {
 
         <div>
           <h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">
+            Legal
+          </h4>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <Link to="/privacidad" className="hover:text-brand">
+                Política de privacidad
+              </Link>
+            </li>
+            <li>
+              <Link to="/terminos" className="hover:text-brand">
+                Términos y condiciones
+              </Link>
+            </li>
+            <li>
+              <Link to="/cookies" className="hover:text-brand">
+                Política de cookies
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">
             Compañía
           </h4>
 
@@ -89,9 +112,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="container-page py-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} Excelencia Educativa. Todos los derechos reservados.
-          </p>
+          <p>© {new Date().getFullYear()} Excelencia Educativa. Todos los derechos reservados.</p>
 
           <p className="font-mono">Hecho en Colombia 🇨🇴</p>
         </div>

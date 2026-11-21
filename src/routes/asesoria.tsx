@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
 import { canonicalLink, pageSocialMeta } from "@/lib/seo";
@@ -46,7 +46,11 @@ function Page() {
     const data = new FormData(event.currentTarget);
     const body = fields
       .map(([label]) => `${label}: ${data.get(label)}`)
-      .concat(["", `Comentarios: ${data.get("Comentarios")}`])
+      .concat([
+        "",
+        `Comentarios: ${data.get("Comentarios")}`,
+        "Autorizo el tratamiento de los datos incluidos en esta solicitud conforme a la Política de privacidad.",
+      ])
       .join("\n");
     window.location.href = `mailto:info@excelenciaeducativa.co?subject=${encodeURIComponent("Solicitud de asesoría")}&body=${encodeURIComponent(body)}`;
   };
@@ -89,9 +93,21 @@ function Page() {
         <button type="submit" className="btn-primary w-full mt-8">
           Solicitar asesoría
         </button>
-        <p className="mt-4 text-xs text-muted-foreground text-center">
-          Al enviar aceptas nuestra política de tratamiento de datos.
-        </p>
+        <label className="mt-6 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <input
+            type="checkbox"
+            name="autorizacionDatos"
+            required
+            className="mt-1 size-4 shrink-0 accent-brand"
+          />
+          <span>
+            Leí la{" "}
+            <Link to="/privacidad" className="font-semibold text-brand underline">
+              Política de privacidad
+            </Link>{" "}
+            y autorizo el tratamiento de los datos que incluí para atender esta solicitud.
+          </span>
+        </label>
       </form>
     </PageShell>
   );

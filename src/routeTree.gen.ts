@@ -16,11 +16,14 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CarrerasRouteImport } from './routes/carreras'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CotizacionRouteImport } from './routes/cotizacion'
 import { Route as IaRouteImport } from './routes/ia'
 import { Route as NosotrosRouteImport } from './routes/nosotros'
 import { Route as PlataformaRouteImport } from './routes/plataforma'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TerminosRouteImport } from './routes/terminos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -57,6 +60,11 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CotizacionRoute = CotizacionRouteImport.update({
   id: '/cotizacion',
   path: '/cotizacion',
@@ -77,9 +85,19 @@ const PlataformaRoute = PlataformaRouteImport.update({
   path: '/plataforma',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminosRoute = TerminosRouteImport.update({
+  id: '/terminos',
+  path: '/terminos',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -91,11 +109,14 @@ export interface FileRoutesByFullPath {
   '/carreras': typeof CarrerasRoute
   '/catalogo': typeof CatalogoRoute
   '/contacto': typeof ContactoRoute
+  '/cookies': typeof CookiesRoute
   '/cotizacion': typeof CotizacionRoute
   '/ia': typeof IaRoute
   '/nosotros': typeof NosotrosRoute
   '/plataforma': typeof PlataformaRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -105,11 +126,14 @@ export interface FileRoutesByTo {
   '/carreras': typeof CarrerasRoute
   '/catalogo': typeof CatalogoRoute
   '/contacto': typeof ContactoRoute
+  '/cookies': typeof CookiesRoute
   '/cotizacion': typeof CotizacionRoute
   '/ia': typeof IaRoute
   '/nosotros': typeof NosotrosRoute
   '/plataforma': typeof PlataformaRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -120,11 +144,14 @@ export interface FileRoutesById {
   '/carreras': typeof CarrerasRoute
   '/catalogo': typeof CatalogoRoute
   '/contacto': typeof ContactoRoute
+  '/cookies': typeof CookiesRoute
   '/cotizacion': typeof CotizacionRoute
   '/ia': typeof IaRoute
   '/nosotros': typeof NosotrosRoute
   '/plataforma': typeof PlataformaRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -136,11 +163,14 @@ export interface FileRouteTypes {
     | '/carreras'
     | '/catalogo'
     | '/contacto'
+    | '/cookies'
     | '/cotizacion'
     | '/ia'
     | '/nosotros'
     | '/plataforma'
+    | '/privacidad'
     | '/sitemap.xml'
+    | '/terminos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -150,11 +180,14 @@ export interface FileRouteTypes {
     | '/carreras'
     | '/catalogo'
     | '/contacto'
+    | '/cookies'
     | '/cotizacion'
     | '/ia'
     | '/nosotros'
     | '/plataforma'
+    | '/privacidad'
     | '/sitemap.xml'
+    | '/terminos'
   id:
     | '__root__'
     | '/'
@@ -164,11 +197,14 @@ export interface FileRouteTypes {
     | '/carreras'
     | '/catalogo'
     | '/contacto'
+    | '/cookies'
     | '/cotizacion'
     | '/ia'
     | '/nosotros'
     | '/plataforma'
+    | '/privacidad'
     | '/sitemap.xml'
+    | '/terminos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -179,11 +215,14 @@ export interface RootRouteChildren {
   CarrerasRoute: typeof CarrerasRoute
   CatalogoRoute: typeof CatalogoRoute
   ContactoRoute: typeof ContactoRoute
+  CookiesRoute: typeof CookiesRoute
   CotizacionRoute: typeof CotizacionRoute
   IaRoute: typeof IaRoute
   NosotrosRoute: typeof NosotrosRoute
   PlataformaRoute: typeof PlataformaRoute
+  PrivacidadRoute: typeof PrivacidadRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TerminosRoute: typeof TerminosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -237,6 +276,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cotizacion': {
       id: '/cotizacion'
       path: '/cotizacion'
@@ -265,11 +311,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlataformaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminos': {
+      id: '/terminos'
+      path: '/terminos'
+      fullPath: '/terminos'
+      preLoaderRoute: typeof TerminosRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -283,22 +343,15 @@ const rootRouteChildren: RootRouteChildren = {
   CarrerasRoute: CarrerasRoute,
   CatalogoRoute: CatalogoRoute,
   ContactoRoute: ContactoRoute,
+  CookiesRoute: CookiesRoute,
   CotizacionRoute: CotizacionRoute,
   IaRoute: IaRoute,
   NosotrosRoute: NosotrosRoute,
   PlataformaRoute: PlataformaRoute,
+  PrivacidadRoute: PrivacidadRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TerminosRoute: TerminosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

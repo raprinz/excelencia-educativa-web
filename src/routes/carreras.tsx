@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
 import { canonicalLink, pageSocialMeta } from "@/lib/seo";
@@ -34,7 +34,11 @@ function Page() {
     const data = new FormData(event.currentTarget);
     const body = fields
       .map((label) => `${label}: ${data.get(label)}`)
-      .concat(["", "Adjunto: hoja de vida en PDF."])
+      .concat([
+        "",
+        "Adjunto: hoja de vida en PDF.",
+        "Autorizo el tratamiento de los datos incluidos en esta postulación conforme a la Política de privacidad.",
+      ])
       .join("\n");
     window.location.href = `mailto:administracion@excelenciaeducativa.co?subject=${encodeURIComponent("Postulación laboral")}&body=${encodeURIComponent(body)}`;
   };
@@ -72,11 +76,26 @@ function Page() {
             className="mt-1 w-full text-sm text-muted-foreground"
           />
         </div>
+        <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <input
+            type="checkbox"
+            name="autorizacionDatos"
+            required
+            className="mt-1 size-4 shrink-0 accent-brand"
+          />
+          <span>
+            Leí la{" "}
+            <Link to="/privacidad" className="font-semibold text-brand underline">
+              Política de privacidad
+            </Link>{" "}
+            y autorizo el tratamiento de los datos incluidos para evaluar esta postulación.
+          </span>
+        </label>
         <button type="submit" className="btn-primary w-full">
           Postularme
         </button>
         <p className="text-xs text-muted-foreground">
-          Se abrirá tu Provedor de correo para que adjuntes tu hoja de vida en PDF.
+          Se abrirá tu proveedor de correo para que adjuntes tu hoja de vida en PDF.
         </p>
       </form>
     </PageShell>

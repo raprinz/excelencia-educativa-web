@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 import { PageShell } from "@/components/page-shell";
 import { Phone, Mail, Clock } from "lucide-react";
@@ -57,6 +57,7 @@ function Page() {
       `Nombre: ${data.get("nombre")}`,
       `Correo: ${data.get("correo")}`,
       `Institución: ${data.get("institucion")}`,
+      "Autorizo el tratamiento de los datos incluidos en este mensaje conforme a la Política de privacidad.",
       "",
       String(data.get("mensaje")),
     ].join("\n");
@@ -80,10 +81,7 @@ function Page() {
               const Icon = item.i;
 
               return (
-                <div
-                  key={item.t}
-                  className="p-5 rounded-2xl bg-card border border-border min-w-0"
-                >
+                <div key={item.t} className="p-5 rounded-2xl bg-card border border-border min-w-0">
                   <div className="size-10 rounded-lg bg-brand-soft text-brand grid place-items-center">
                     <Icon className="size-4" />
                   </div>
@@ -163,6 +161,22 @@ function Page() {
               className="mt-1 w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
+
+          <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+            <input
+              type="checkbox"
+              name="autorizacionDatos"
+              required
+              className="mt-1 size-4 shrink-0 accent-brand"
+            />
+            <span>
+              Leí la{" "}
+              <Link to="/privacidad" className="font-semibold text-brand underline">
+                Política de privacidad
+              </Link>{" "}
+              y autorizo el tratamiento de los datos que incluí para responder esta solicitud.
+            </span>
+          </label>
 
           <button type="submit" className="btn-primary w-full">
             Enviar mensaje
